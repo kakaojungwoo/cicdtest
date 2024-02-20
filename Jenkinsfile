@@ -9,8 +9,8 @@ pipeline {
         stage ('docker build and push') {
           steps {
             sh '''
-            docker build -t oncliff/cicdtest:blue .
-            docker push oncliff/cicdtest:blue
+            sudo docker build -t oncliff/cicdtest:blue .
+            sudo docker push oncliff/cicdtest:blue
             '''
           }
         }
