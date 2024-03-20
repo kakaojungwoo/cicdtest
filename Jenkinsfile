@@ -17,7 +17,7 @@ pipeline {
         stage('deploy kubernetes') {
           steps {
             sh '''
-            ansible master -m command -a 'kubectl create deployment jenkinstest --image=oncliff/cicdtest:blue'
+            ansible master -m command -a 'kubectl create deployment jenkinstest --image=oncliff/cicdtest:jenkins'
             ansible master -m command -a 'kubectl expose deployment jenkinstest --type=LoadBalancer --port=80 --target-port=80 --name=jenkinstest'
             
             '''
